@@ -1,0 +1,2 @@
+This is a test english corpus for a language detection project.
+Using n-gram analysis and probabilities.
