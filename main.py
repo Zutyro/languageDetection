@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 
 
 def main():
@@ -13,6 +14,25 @@ def main():
     print(en_bigrams)
     print(en_trigrams)
 
+    en_unigram_freq, en_bigram_freq, en_trigram_freq = get_frequencies(en_unigrams, en_bigrams, en_trigrams,en_corpus_string)
+    print(en_unigram_freq)
+    print(en_bigram_freq)
+    print(en_trigram_freq)
+
+    plot_frequencies(en_unigram_freq, en_bigram_freq, en_trigram_freq, 20)
+
+
+
+
+
+
+
+def plot_frequencies(unigram_freq, bigram_freq, trigram_freq, size):
+    ngrams = (unigram_freq, bigram_freq, trigram_freq)
+    for ngram in ngrams:
+        nigram_freq_sorted = dict(sorted(ngram.items(), key=lambda x: x[1], reverse=True))
+        plt.bar(list(nigram_freq_sorted.keys())[0:size], list(nigram_freq_sorted.values())[0:size], color='blue')
+        plt.show()
 
 
 
@@ -50,6 +70,22 @@ def get_ngrams(corpus_string):
         unigrams[char] = unigrams.get(char, 0) + 1
 
     return unigrams, bigrams, trigrams
+
+def get_frequencies(unigrams, bigrams, trigrams, corpus_string):
+    unigram_freq = {}
+    bigram_freq = {}
+    trigram_freq = {}
+    corpus_len = len(corpus_string)
+
+    for x in unigrams:
+        unigram_freq[x] = unigrams.get(x) / corpus_len
+    for x in bigrams:
+        bigram_freq[x] = bigrams.get(x) / (corpus_len/2)
+    for x in trigrams:
+        trigram_freq[x] = trigrams.get(x) / (corpus_len/3)
+
+    return unigram_freq, bigram_freq, trigram_freq
+
 
 
 if __name__ == '__main__':
