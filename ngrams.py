@@ -5,24 +5,27 @@ from matplotlib import pyplot as plt
 def plot_frequencies(unigram_freq, bigram_freq, trigram_freq, size):
     ngrams = (unigram_freq, bigram_freq, trigram_freq)
     for ngram in ngrams:
-        nigram_freq_sorted = dict(sorted(ngram.items(), key=lambda x: x[1], reverse=True))
-        plt.bar(list(nigram_freq_sorted.keys())[0:size], list(nigram_freq_sorted.values())[0:size], color='blue')
+        ngram_freq_sorted = dict(sorted(ngram.items(), key=lambda x: x[1], reverse=True))
+        plt.bar(list(ngram_freq_sorted.keys())[0:size], list(ngram_freq_sorted.values())[0:size], color='blue')
         plt.show()
 
 
 
 def corpus_to_string(corpus, chars):
-    file = open(corpus, 'r')
+    file = open(corpus, 'r', encoding='utf8')
     lines = file.readlines()
     corpus_string = ""
+    corpus_string_count = 0
 
     for line in lines:
         for char in line:
             if char.lower() in chars:
                 corpus_string = corpus_string + char.lower()
-                print(char)
+                corpus_string_count += 1
                 continue
-            corpus_string = corpus_string + ' '
+            if len(corpus_string) > 1 and corpus_string[corpus_string_count-1] != ' ':
+                corpus_string = corpus_string + ' '
+                corpus_string_count += 1
 
     return corpus_string
 
