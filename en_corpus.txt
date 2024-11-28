@@ -1,2 +1,4 @@
 This is a test english corpus for a language detection project.
 Using n-gram analysis and probabilities.
+I do wonder how got this will perform.
+Thus I shall add more lines to get better frequency characteristics.

@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8076b852-812e-481a-9cdf-f8d6ed4fb5ac" name="Changes" comment="Ngrams functions combined into one to avoid needless loops.">
+    <list default="true" id="8076b852-812e-481a-9cdf-f8d6ed4fb5ac" name="Changes" comment="Added a function to get frequencies from ngrams and a function to plot the frequencies.">
+      <change afterPath="$PROJECT_DIR$/ngrams.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/en_corpus.txt" beforeDir="false" afterPath="$PROJECT_DIR$/en_corpus.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +75,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1732784291842</updated>
-      <workItem from="1732784293357" duration="4729000" />
+      <workItem from="1732784293357" duration="5886000" />
     </task>
     <task id="LOCAL-00001" summary="Project created">
       <option name="closed" value="true" />
@@ -99,7 +101,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732786732696</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added a function to get frequencies from ngrams and a function to plot the frequencies.">
+      <option name="closed" value="true" />
+      <created>1732789175833</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732789175833</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,9 +130,10 @@
     <MESSAGE value="Project created" />
     <MESSAGE value="Added functions to convert corpus file to string containing only the supporter characters. Also added function to get unigrams, bigrams and trigrams from the created string." />
     <MESSAGE value="Ngrams functions combined into one to avoid needless loops." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ngrams functions combined into one to avoid needless loops." />
+    <MESSAGE value="Added a function to get frequencies from ngrams and a function to plot the frequencies." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a function to get frequencies from ngrams and a function to plot the frequencies." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/languageDetection$main.coverage" NAME="main Coverage Results" MODIFIED="1732789053311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/languageDetection$main.coverage" NAME="main Coverage Results" MODIFIED="1732789436666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
