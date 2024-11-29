@@ -1,7 +1,7 @@
 from matplotlib import pyplot as plt
 
 
-
+#Funkce vytvoří graf nejvyšších frekvení podle zadaných ngramů a počtu elementů
 def plot_frequencies(unigram_freq, bigram_freq, trigram_freq, size):
     ngrams = (unigram_freq, bigram_freq, trigram_freq)
     for ngram in ngrams:
@@ -10,7 +10,8 @@ def plot_frequencies(unigram_freq, bigram_freq, trigram_freq, size):
         plt.show()
 
 
-
+#Funkce převádí souboru corpusu na řetězec podle zadaných znaků, pokud je daný znak v seznamu znaků,
+#je přidán do řetězce lowercase, pokud není je nahrazen mezerou, mezery se nikdy neopakují po sobě
 def corpus_to_string(corpus, chars):
     file = open(corpus, 'r', encoding='utf8')
     lines = file.readlines()
@@ -31,7 +32,7 @@ def corpus_to_string(corpus, chars):
 
 
 
-
+#Vrací počty všech ngramů nacházejících se v řetězci korpusu
 def get_ngrams(corpus_string):
     unigrams = {}
     bigrams = {}
@@ -49,6 +50,8 @@ def get_ngrams(corpus_string):
 
     return unigrams, bigrams, trigrams
 
+
+#Vrací frekvencé daných ngramů v řetězci corpusu
 def get_frequencies(unigrams, bigrams, trigrams, corpus_string):
     unigram_freq = {}
     bigram_freq = {}
